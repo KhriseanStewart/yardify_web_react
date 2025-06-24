@@ -49,7 +49,7 @@ const onRegister = async (e) => {
   return (
     <>
       {userLoggedIn && (<Navigate to={'/discover'} replace={true}/> )}
-    <form className="form">
+    <form className="form max-w-screen w-full sm:max-w-3xs md:max-w-96">
       <p className="title">{name}</p>
       {isSignUp && (
           <label>
