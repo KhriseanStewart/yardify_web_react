@@ -3,7 +3,7 @@ import logo from '../../assets/logo.jpg'
 
 export default function AdsCard(props) {
   return (
-    <div className='ad-card flex flex-row p-4 rounded-xl bg-white max-w-lg w-full mr-4'>
+    <div className='ad-card flex flex-row p-4 rounded-xl bg-white max-w-lg w-full'>
         <div className='flex flex-col text-start max-w-3xs w-full gap-5 justify-center'>
             <h2 className='font-semibold text-5xl'>{props.name}</h2>
             <br />
