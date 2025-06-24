@@ -4,13 +4,18 @@ function IconButton(props) {
   return (
     <div className="flex items-center rounded-md" onClick={() => console.log('Hello world')}>
         <div className='flex items-center rounded-md'>
-            <FaHeart color='red' size={30}></FaHeart>
-            <div className='mr-2' ></div>
-            <FaRegComment color='black' size={30} />
+            <div className='bg-white p-2.5 rounded-3xl'>
+                <FaHeart color='grey' size={26}></FaHeart>
+            </div>
+            <div className='bg-white p-2.5 rounded-3xl'>
+                <FaRegComment color='black' size={26} />
+            </div>
         </div>
-        <div className='mr-3'></div>
+        <div className='mr-2'></div>
         <div className='flex items-center rounded-xl bg-white p-2'>
-            <FaUser color='black' size={30}></FaUser>
+            <div className='bg-black p-1.5 rounded-2xl'>
+                <FaUser color='white' size={16}></FaUser>
+            </div>
             <br />
             <h4 className='text-lg font-medium'>{props.name}</h4>
         </div>

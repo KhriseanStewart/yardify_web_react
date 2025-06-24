@@ -19,14 +19,14 @@ function SearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
-        className="border border-gray-300 rounded-2xl px-6 py-2 w-lg bg-white text-black"
+        className="border border-gray-300 rounded-2xl px-6 py-2 w-lg bg-white text-black md:max-w-40 md:w-2.5 "
       />
-      <button
+      {/* <button
         onClick={handleSearch}
         className="ml-2 bg-blue-500 text-white px-4 py-2 rounded"
       >
         Search
-      </button>
+      </button> */}
     </div>
   );
 }
