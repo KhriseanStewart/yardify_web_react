@@ -11,8 +11,8 @@ function IconButton(props) {
                 <FaRegComment color='black' size={26} />
             </div>
         </div>
-        <div className='mr-2'></div>
-        <div className='flex items-center rounded-xl bg-white p-2'>
+        <div className='hidden sm:flex sm:mr-2'></div>
+        <div className='flex items-center rounded-xl bg-white p-2 min-w-1.5 max-w-3xs'>
             <div className='bg-black p-1.5 rounded-2xl'>
                 <FaUser color='white' size={16}></FaUser>
             </div>

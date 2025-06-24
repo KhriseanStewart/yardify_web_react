@@ -19,7 +19,7 @@ function SearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
-        className="border border-gray-300 rounded-2xl px-6 py-2 w-lg bg-white text-black md:max-w-40 md:w-2.5 "
+        className="border border-gray-300 rounded-2xl px-6 py-2 min-w-2.5 max-w-4xl w-full bg-white text-black"
       />
       {/* <button
         onClick={handleSearch}
