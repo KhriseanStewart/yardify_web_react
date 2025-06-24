@@ -3,7 +3,6 @@ import { FaFilter  } from 'react-icons/fa'
 
 function CategoryRow() {
   const categories = [
-    "All",
     "Vehicles",
     "Electronics",
     "Furniture",
@@ -45,17 +44,6 @@ function CategoryRow() {
             overflowX: 'auto',
             padding: '10px',
         }}>
-            <div style={{
-                flex: '0 0 auto',
-                marginRight: '320px',
-                padding: '8px 10px',
-                borderRadius: '15px',
-                border: '1px solid #ccc',
-                minWidth: '70px',
-                textAlign: 'center',
-                color: 'black',
-                userSelect: 'none'
-            }} className='bg-white p3 flex justify-center items-center min-w-2.5 max-w-5.5' ><FaFilter size={30} color='black'></FaFilter></div>
         {categories.map((category, index) => (
             <div className='bg-white transition ease-in duration-200  hover:bg-gray-100 shadow hover:shadow-lg'
             key={index}

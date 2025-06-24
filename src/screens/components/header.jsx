@@ -7,13 +7,23 @@ import IconButton from './iconButtons'
 function AppBar() {
   const navigate = useNavigate();
 
-  const logOutUser = async (e) => {
+  // const logOutUser = async (e) => {
+  //   e.preventDefault();
+  //   try{
+  //     await doSignOut(e);
+  //     console.log("Wait");
+  //     // On success, navigate
+  //     navigate('/');
+  //   } catch (error){
+  //     console.log('Log out Error:', error)
+  //   }
+  // };
+
+  const navigateUserProfile = async (e) => {
     e.preventDefault();
     try{
-      await doSignOut(e);
       console.log("Wait");
-      // On success, navigate
-      navigate('/');
+      navigate('/profile');
     } catch (error){
       console.log('Log out Error:', error)
     }
@@ -28,7 +38,7 @@ function AppBar() {
         <SearchBar></SearchBar>
       </div>
 
-      <div onClick={logOutUser}>
+      <div onClick={navigateUserProfile}>
         <IconButton name='Khrisean'></IconButton>
       </div>
     </div>
