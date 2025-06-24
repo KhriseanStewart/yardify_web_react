@@ -8,7 +8,7 @@ function Discover() {
 
   return (
     <>
-      <div className="top-0 left-0 w-full p-1 md:p-3">
+      <div className="top-0 left-0 w-full p-0.5 md:p-3">
         <Header />
         <div className=''>
           <br />
