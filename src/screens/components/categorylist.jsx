@@ -37,7 +37,7 @@ function CategoryRow() {
 
   return (
     <>
-    <div className='flex'>
+    <div  className='flex'>
         <div style={{
             display: 'flex',
             flexWrap: 'nowrap',
@@ -63,7 +63,7 @@ function CategoryRow() {
             </div>
         ))}
         </div>
-                </div>
+      </div>
     </>
   );
 }

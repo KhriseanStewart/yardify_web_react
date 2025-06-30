@@ -1,5 +1,6 @@
 import { auth } from "./firebase";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updatePassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+// import { sendEmailVerification, sendPasswordResetEmail, updatePassword } from "firebase/auth";
 
 // Register a new user with email and password
 export const doCreateUserWithEmailAndPassword = async (email, password) => {
@@ -22,6 +23,8 @@ export const doSignInWithGoogle = async () => {
 export const doSignOut = () => {
     return signOut(auth);
 };
+
+export { onAuthStateChanged } from 'firebase/auth';
 
 // Optional functions (uncomment if needed):
 

@@ -12,12 +12,12 @@ function IconButton(props) {
             </div>
         </div>
         <div className='hidden sm:flex sm:mr-2'></div>
-        <div className='flex items-center rounded-xl bg-white p-2 pr-5 min-w-1.5 max-w-3xs'>
+        <div className='flex items-center rounded-xl bg-white p-2 min-w-fit'>
             <div className='bg-black p-1.5 rounded-2xl'>
                 <FaUser color='white' size={16}></FaUser>
             </div>
             <br />
-            <h4 className='hidden sm:flex text-lg font-medium'>{props.name}</h4>
+            <h4 className='hidden sm:flex text-lg font-medium text-black'>{props.name}</h4>
         </div>
     </div>
   );

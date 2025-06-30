@@ -7,6 +7,7 @@ import SignIn from './auth/screens/signin';
 import AuthProvider from './contexts/authcontext';
 import Profilepage from './screens/profile/profile';
 import FavoritesPage from './screens/favorites/favorites';
+import PrivateRoute from './contexts/privateRoute/PrivateRoute'
 
 function App() {
 
@@ -14,15 +15,39 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<LogIn></LogIn>}></Route>
-          <Route path='/signup' element={<SignIn/>}></Route>
-          <Route path='/discover' element={<Discover></Discover>}></Route>
-          <Route path='/profile' element={<Profilepage />}></Route>
-          <Route path='/favorites' element={<FavoritesPage />}></Route>
+          {/* Public routes */}
+          <Route path='/' element={<LogIn />} />
+          <Route path='/signup' element={<SignIn />} />
+
+          {/* Protected routes */}
+          <Route 
+            path='/discover' 
+            element={
+              <PrivateRoute>
+                <Discover />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path='/profile' 
+            element={
+              <PrivateRoute>
+                <Profilepage />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path='/favorites' 
+            element={
+              <PrivateRoute>
+                <FavoritesPage />
+              </PrivateRoute>
+            } 
+          />
         </Routes>
       </Router>
     </AuthProvider>
   )
 }
 
-export default App
+export default App;
