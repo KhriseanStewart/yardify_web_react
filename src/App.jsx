@@ -8,6 +8,7 @@ import AuthProvider from './contexts/authcontext';
 import Profilepage from './screens/profile/profile';
 import FavoritesPage from './screens/favorites/favorites';
 import PrivateRoute from './contexts/privateRoute/PrivateRoute'
+import ProductPage from './screens/components/product_page';
 
 function App() {
 
@@ -41,6 +42,14 @@ function App() {
             element={
               <PrivateRoute>
                 <FavoritesPage />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path='/productpage' 
+            element={
+              <PrivateRoute>
+                <ProductPage />
               </PrivateRoute>
             } 
           />
