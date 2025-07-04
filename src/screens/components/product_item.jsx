@@ -15,9 +15,10 @@ export default function ProductCard({ product }) {
         <div className=''>
             <img className=' w-full h-64 rounded-t-xl object-cover' src={product.imageUrl} alt="" />
         </div> 
-        <div className=' rounded-b-xl flex flex-col pb-1.5 pt-1.5'>
-            <p className="font-light text-black">{product.name}</p>
-            <h2 className="text-black text-xl font-semibold">{product.price}</h2>
+        <div className=' rounded-b-xl flex flex-col pb-1.5 pt-1.5 pl-3 pr-3 text-start'>
+            <h2 className="font-light text-black">{product.name}</h2>
+            <h4 className="text-black text-xl font-semibold">{product.price}</h4>
+            <p className="text-gray-600 text-sm">{product.location}</p>
         </div>
     </div>
   )

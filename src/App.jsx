@@ -8,7 +8,8 @@ import AuthProvider from './contexts/authcontext';
 import Profilepage from './screens/profile/profile';
 import FavoritesPage from './screens/favorites/favorites';
 import PrivateRoute from './contexts/privateRoute/PrivateRoute'
-import ProductPage from './screens/components/product_page';
+import Productpage from './screens/components/product_page';
+import ErrorPage from './screens/404 error/error_page';
 
 function App() {
 
@@ -46,13 +47,14 @@ function App() {
             } 
           />
           <Route 
-            path='/productpage' 
+            path='/productpage/:productId' 
             element={
               <PrivateRoute>
-                <ProductPage />
+                <Productpage />
               </PrivateRoute>
             } 
           />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
-import ProductCard from './product_item';
 
-function SearchBar(props) {
+function SearchBar({onsearchResults}) {
 
     
   const [products, setItems] = useState([]);
@@ -25,6 +24,7 @@ function SearchBar(props) {
       product.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
     console.log(filteredProducts);
+    onsearchResults(filteredProducts); // Pass filtered results to parent component
   };
 
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -43,32 +43,23 @@ const handleKeyDown = (e) => {
 
   return (
 <>
-    <div className="flex items-">
+    <div className="flex max-w-3xl">
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}//handleChange}
-        onKeyDown={props.handleKeyDown}  //handleKeyDown
+        onKeyDown={handleKeyDown}  //handleKeyDown
         //   
-        className="border border-gray-300 rounded-2xl px-6 py-2 min-w-2.5 max-w-4xl w-full bg-white text-black"
+        className="border border-gray-300 rounded-2xl px-6 py-2 min-w-12 max-w-3xl w-full bg-white text-black lg:min-w-96 "
       />
       <button
-        onClick={props.performSearch} //performSearch}
+        onClick={performSearch} //performSearch}
         className="ml-2 bg-blue-500 text-white px-4 py-2 rounded"
       >
         Search
       </button>
     </div>
-    <div>
-  {filteredProducts.length > 0 ? (
-    filteredProducts.map(product => (
-      <ProductCard key={product.id} product={product} />
-    ))
-  ) : (
-    <p>No results</p>
-  )}
-</div>
 </>
   );
 }

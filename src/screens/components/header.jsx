@@ -50,45 +50,23 @@ function AppBar({ uid }) {
   };
 
     const [products, setItems] = useState([]);
-       useEffect(() => {
+
+  useEffect(() => {
     const fetchItems = onSnapshot(collection(db, 'products'), (snapshot) => {
         const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setItems(data);
       });
       return () => fetchItems();
-    }, []);
+  }, []);
 
-  const [searchTerm, setSearchTerm] = useState('');
-  
-    const handleChange = (e) => {
-      setSearchTerm(e.target.value);
-      // You can also filter products based on searchTerm here if needed
-      const filteredProducts = products.filter(product => 
-        product.name.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-      console.log(filteredProducts);
-    };
-  
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    const performSearch = () => {
-    const results = products.filter(product =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProducts(results);
-  }
-  
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      performSearch();
-    }
-  };
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   return (
     <>
     <div className="flex flex-row p-2 justify-between items-center w-full">
-      <div className='flex flex-row justify-center items-center'>
+      <div className='flex flex-row justify-start items-center max-w-fit'>
         <h1 className="text-2xl font-semibold text-black">Discover</h1>
-        <SearchBar handleChange={handleChange} handleKeyDown={handleKeyDown}  />
+        <SearchBar onsearchResults={setFilteredProducts} />
       </div>
 
       <div onClick={navigateUserProfile}>

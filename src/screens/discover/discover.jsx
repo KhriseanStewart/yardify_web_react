@@ -13,7 +13,7 @@ function Discover() {
 
   return (
     <>
-      <div className="top-0 left-0 w-full p-0.5 md:pl-20 md:pr-20">
+      <div className="top-0 left-0 w-full p-0.5 md:pl-10 md:pr-10">
         <Header uid={user.uid} />
         <div className='p-2.5'>
           <br />
